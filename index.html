@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Vezbanje</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">jelena@vezbanje.com</a>
+        <i class="bi bi-phone-fill phone-icon"></i> +381 65 3232 221
+      </div>
+      <div class="social-links d-none d-md-block">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Vezbanje nas cini boljim</a></h1>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Administracija</h2>
+          <p>Ovde mozete uneti plan i program vezbanja i vezbi koje zelite da vam trener pokaze.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <label for="nivo">Nivo inteziteta</label>
+            <select id="nivo" class="form-control">
+
+            </select>
+          </div>
+
+          <div class="col-lg-6">
+            <label for="sortiranje">Sortiraj po nazivu vezbe</label>
+            <select id="sortiranje" class="form-control">
+              <option value="asc">Rastuce</option>
+              <option value="desc">Opadajuce</option>
+            </select>
+          </div>
+
+          <div class="col-lg-12" style="padding-top: 10px">
+            <button class="btn-success btn" onclick="pronadji()">Pronadji vezbe</button>
+          </div>
+        </div>
+
+        <div class="row" id="rezultat">
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <h2>Forma za unos</h2>
+            <label for="nazivVezbeUnos">
+              Naziv vezbe
+            </label>
+            <input type="text" id="nazivVezbeUnos" class="form-control"/>
+
+            <label for="opisUnos">
+              Opis vezbe
+            </label>
+            <input type="text" id="opisUnos" class="form-control"/>
+
+            <label for="trenerUnos">
+              Trener
+            </label>
+            <select id="trenerUnos" class="form-control">
+
+            </select>
+            <label for="nivoUnos">
+              Nivo inteziteta
+            </label>
+            <select id="nivoUnos" class="form-control">
+
+            </select>
+            <hr/>
+            <button onclick="unesiVezbu()" class="btn btn-success">Unesi vezbu</button>
+          </div>
+
+          <div class="col-lg-6">
+            <h2>Forma za izmenu</h2>
+            <input type="hidden" id="idIzmena" class="form-control"/>
+
+            <label for="nazivVezbeIzmena">
+              Naziv vezbe
+            </label>
+            <input type="text" id="nazivVezbeIzmena" class="form-control"/>
+
+            <label for="opisIzmena">
+              Opis vezbe
+            </label>
+            <input type="text" id="opisIzmena" class="form-control"/>
+
+            <label for="trenerIzmena">
+              Trener
+            </label>
+            <select id="trenerIzmena" class="form-control">
+
+            </select>
+            <label for="nivoIzmena">
+              Nivo inteziteta
+            </label>
+            <select id="nivoIzmena" class="form-control">
+
+            </select>
+            <hr/>
+            <button onclick="izmeniVezbu()" class="btn btn-success">Izmeni vezbu</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" style="padding-top: 30px">
+    <div class="container">
+      <h3>Vezbanje</h3>
+      <p>Vezbanje nas cini boljim!</p>
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>Jelena</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery/jquery.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+<script>
+  function pronadjiIntezitete() {
+      $.ajax({
+          url: 'server.php',
+          data: {
+              operacija: 'inteziteti'
+          },
+        success: function (podaci) {
+
+          var podaciSvi  = '<option value="SVI">Svi nivoi inteziteta</option>' + podaci;
+
+            $('#nivo').html(podaciSvi);
+            $('#nivoUnos').html(podaci);
+            $('#nivoIzmena').html(podaci);
+            pronadji();
+
+        }
+      });
+  }
+
+
+  function pronadjiTrenere() {
+    $.ajax({
+      url: 'server.php',
+      data: {
+        operacija: 'treneri'
+      },
+      success: function (podaci) {
+        $('#trenerUnos').html(podaci);
+        $('#trenerIzmena').html(podaci);
+
+      }
+    });
+  }
+
+
+  function pronadji() {
+
+    var nivo = $("#nivo").val();
+    var sort = $("#sortiranje").val();
+    $.ajax({
+      url: 'server.php',
+      data: {
+        operacija: 'pronadji',
+        nivo : nivo,
+        sort: sort
+      },
+      success: function (podaci) {
+        $('#rezultat').html(podaci);
+      }
+    });
+  }
+  pronadjiIntezitete();
+  pronadjiTrenere();
+
+  function obrisi(id) {
+    $.ajax({
+      url: 'server.php',
+      type: 'post',
+      data: {
+        operacija: 'obrisi',
+        id : id,
+      },
+      success: function (podaci) {
+        alert("Uspesno obrisana vezba");
+        pronadji();
+      }
+    });
+  }
+
+  function ucitajIzmenu(id) {
+    $.ajax({
+      url: 'server.php',
+      type: 'get',
+      data: {
+        operacija: 'ucitajVezbu',
+        id : id,
+      },
+      success: function (podaci) {
+        var podatak = JSON.parse(podaci);
+
+        $("#idIzmena").val(podatak.id);
+        $("#nazivVezbeIzmena").val(podatak.nazivVezbe);
+        $("#opisIzmena").val(podatak.opis);
+        $("#nivoIzmena").val(podatak.intezitetID);
+        $("#trenerIzmena").val(podatak.trenerID);
+      }
+    });
+  }
+
+  function unesiVezbu() {
+    $.ajax({
+      url: 'server.php',
+      type: 'post',
+      data: {
+        operacija: 'unesi',
+        nazivVezbe : $("#nazivVezbeUnos").val(),
+        opis : $("#opisUnos").val(),
+        trenerID : $("#trenerUnos").val(),
+        intezitetID : $("#nivoUnos").val(),
+      },
+      success: function (podaci) {
+        alert("Uspesno kreirana vezba");
+        pronadji();
+      }
+    });
+  }
+
+  function izmeniVezbu() {
+    $.ajax({
+      url: 'server.php',
+      type: 'post',
+      data: {
+        operacija: 'izmeni',
+        id: $("#idIzmena").val(),
+        nazivVezbe : $("#nazivVezbeIzmena").val(),
+        opis : $("#opisIzmena").val(),
+        trenerID : $("#trenerIzmena").val(),
+        intezitetID : $("#nivoIzmena").val(),
+      },
+      success: function (podaci) {
+        alert("Uspesno izmenjena vezba");
+        pronadji();
+      }
+    });
+  }
+</script>
+
+
+
+</body>
+
+</html>
